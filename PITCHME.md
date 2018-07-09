@@ -111,7 +111,7 @@ public class UserWithToken : HasCredentials {
 }
 ```
 @[1-3](We want a Credentials class)
-@[5-8](We define first type of Credentials)
+@[5-8](We define a type of Credentials)
 @[10-12](We define another type of Credentials)
 @[14-16](We define an interface to force the existence of Credentials later on ...)
 @[18-24](We have some class which can deal with anything that implements 'HasCredentials')
@@ -142,11 +142,9 @@ let logInToSystem(Credentials cred) =
 ```
 
 @[1](Nothing new here)
-@[3-5](This is a sum type. You create a valid Credentials value with the Token or Classic constructor <br /> Both make valid Credentials values)
-@[7-11](No need for several implementation of User.)
-@[14-17](F# gives you way to deal with both representation of Credentials)
-
-+++
-And yes you could type things in F# and use it in C# application ...
+@[3-5](This is a sum type.)
+@[3-5](You create a valid Credentials value with the Token or the Classic constructor)
+@[7-11](No need for several implementation of User or any variation, just give it a Credential field)
+@[13-17](F# gives you way to deal with both representation of Credentials)
 
 ---
