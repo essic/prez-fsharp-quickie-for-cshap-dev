@@ -12,6 +12,6 @@
 
 ### What's F# ?
 
--It compiles to executable or you can script with it |
--Heavily influenced by ML, OCaml, Haskell, C# & others |
--Fully supported by .NET & Mono. Compiles to Javascript. |
+- It compiles to executable or you can script with it |
+- Heavily influenced by ML, OCaml, Haskell, C# & others |
+- Fully supported by .NET & Mono. Compiles to Javascript |
