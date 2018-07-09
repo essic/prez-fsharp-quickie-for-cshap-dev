@@ -18,8 +18,7 @@
 
 ---
 
-### Reson 1
-No compatibility risk !
+### Reson 1 -> No compatibility risk !
 
 +++
 Anything written in C# can be used in F# !
@@ -33,11 +32,11 @@ The reverse is true for all basic F# that you can write. <br /> Special cases in
 
 ---
 
-### Reason 2
+### Reason 2 -> F# has better typing 
 
-F# has better typing, which reduces boiler plate code drastically <br /> Sum types & Product types 
+Sum types & Product types 
 
----
++++
 #### Product type
 ```csharp
 public class Something {
@@ -69,7 +68,7 @@ type Something() =
 ```
 Of course you can also make a class in F# !
 
----
++++
 #### Sum type
 
 It's when a type can have multiple representation. <br /> There's no Sum Type in C# however, there's polymorphism ...
@@ -149,8 +148,13 @@ let logInToSystem(Credentials cred) =
 
 ---
 
-### Reason 3
-F# is immutable by default. <br /> Immutability in general have deep repercusion on the design / implementation of systems. <br> Here some benefits for F# ...
+### Reason 3 -> F# is immutable by default. 
+
+Immutability in general have deep repercusion on the design / implementation of systems. 
+<br /> How many times have you declared some fields / properties as 'readonly' ?
+
++++
+Far less complicated to write concurrent code in application in F#
 
 +++
 Declaration is initialisation.
@@ -159,9 +163,6 @@ Declaration is initialisation.
 let someVariable : Int
 ```
 This does not compile in F#, you must give it a value
-
-+++
-Far less complicated to write concurrent code in application in F#
 
 +++
 You never question if the value is present when needed except if the type tells you it can happen
@@ -176,10 +177,6 @@ You never question if the value is present when needed except if the type tells 
 
 +++
 
-If you want to have an idea on why immutability is so popular with many systems / practices (Redux, Kafka, Event Sourcing ...) <br /> Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
-
-+++
-
 Of course if mutability is what you want ...
 
 ```fsharp
@@ -187,5 +184,72 @@ let mutable myNameIs = "@essiccf37"
 
 myNameIs <- "Slim Shady"
 ```
++++
+If you want to have an idea on why immutability is so popular with many systems / practices (Redux, Kafka, Event Sourcing ...) <br /> Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
 
 ---
+
+### Reason 4 -> Functional paradigm first
+
+As stated before, F# supports several paradigm but is Functional first. 
+
++++
+```fsharp
+let sayHello name =
+  printfn "Hello %s" name
+```
+@[1-2](This is a function in F# and it's strongly type !)
+
++++
+```fsharp
+//int -> int -> int
+let add number1 number2 =
+  number1 + number2
+
+//int -> int
+let add2 = add 2
+
+add2 4
+//results is 6
+```
+@[1-3](A simple addition function)
+@[5-6](We use the automatic currying of F# to create a function which will add '2')
+@[8-9](We call the add2 function)
+
++++
+```
+let add n1 n2 =
+  n1 + n2
+
+let mul n1 n2 =
+  n1 * n2
+  
+let mul2 = mul 2
+let add10 = add10
+
+let mulBy2ThenAdd10 = mul2 >> add10
+
+mulBy2ThenAdd10 5 
+//result is : 20
+
+```
+@[1-2,4-5](We define some function)
+@[7-8](We use some currying)
+@[10](We use 'function composition' to define a function which multiply input by 2 then add 10 to the result)
+@[10](This is called function composition, '>>' is offered by F#)
+@[12-13](We call that function)
++++
+
+In short, functional paradigm has at least 3 core operations, all present in F# of course :
+- Transform |
+- Filter |
+- Reduce |
+
++++
+In short, it's about writing LinQ all day long :
+- Select is map |
+- Where isfilter |
+- Aggregate is fold or reduce |
+
++++
+Functional paradigms implies a strong focus on data, function working on data and composability. <br /> Coupled with the type systems, we have a real boost on productivity and more important reliability. 
