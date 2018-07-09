@@ -340,7 +340,7 @@ F# on .NET core
 Active patterns 
 
 +++ 
-Error handling with : Option\<T\> and Result\<TSuccess,TError\> 
+Error handling with : `Option<T>` and `Result<TSuccess,TError>` 
 
 +++ 
 Type Providers
