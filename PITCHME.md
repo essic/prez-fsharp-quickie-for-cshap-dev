@@ -15,3 +15,18 @@
 - It compiles to executable or you can script with it |
 - Heavily influenced by ML, OCaml, Haskell, C# & others |
 - Fully supported by .NET & Mono. Compiles to Javascript |
+
+---
+
+### Reson 1
+
+No compatibility risk !
+
++++
+
+Anything written in C# can be used in F# !
+
++++
+
+The reverse is true for all basic F# that you can write. <br /> Special cases includes features depending on the F# compilers.
+
