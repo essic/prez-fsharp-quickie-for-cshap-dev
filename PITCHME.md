@@ -69,3 +69,51 @@ type Something() =
   member val SomeSentence = "" with get, set
 ```
 Of course you can also make a class in F# !
+
+---
+### Sum type
+
+It's when a type can have multiple representation. <br /> There's no Sum Type in C# however, there's polymorphism ...
+
++++
+
+```csharp
+public abstract class Credentials {
+//...
+}
+
+public class LoginAndPasswordCred : Credentials {
+  public string User { get; set; }
+  public string Password { get; set; }
+}
+
+public class TokenCred : Credentials {
+  public string Token {get;set;}
+}
+
+public interface HasCredentials {
+  Credentials GetCredentials();
+} 
+
+public class LoginSystem {
+  public bool LogIn(HasCredentials subject) {
+    bool hasSignedIn;
+    //Imagine some code here ...
+    return hasSignedIn;
+  }
+}
+
+public class UserWithLoginAndPassword : HasCredentials {
+  //...
+}
+
+public class UserWithToken : HasCredentials {
+  //...
+}
+```
+@[1-3](We want a Credentials class)
+@[5-8](We define first type of Credentials)
+@[10-12](We define another type of Credentials)
+@[14-16](We define an interface to force the existence of Credentials later on ...)
+@[18-24](We have some class which can deal with anything that implements 'HasCredentials')
+@[26-28,30-32](We have to kind of Users, you can the idea ...)
