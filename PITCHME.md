@@ -148,3 +148,32 @@ let logInToSystem(Credentials cred) =
 @[13-17](F# gives you way to deal with both representation of Credentials)
 
 ---
+
+### Reason 3
+F# is immutable by default. <br /> Immutability in general have deep repercusion on the design / implementation of systems. <br> Here some benefits for F# ...
+
++++
+Declaration is initialisation.
+
+```fsharp
+let someVariable : Int
+```
+This does not compile in F#, you must give it a value
+
++++
+Far less complicated to write concurrent code in application in F#
+
++++
+You never question if the value is present when needed except if the type tells you, it can happen <br /> 'null' is not the default for representing the abscence of value ...
+
++++
+#### F# supports 'null' for compatibility reasons with .NET, however ...
+- no implicit 'null' assignation is done
+- pure F# types are value type, not reference (a little bit more complicated ^__^)
+
++++
+
+If you want to know more about immutability in general and why so many systems / practices uses it (Redux, Kafka, Event Sourcing ...) <br /> Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
+
+---
+
