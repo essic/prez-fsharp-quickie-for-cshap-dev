@@ -244,19 +244,20 @@ mulBy2ThenAdd10 5
 @[12-13](We call that function)
 +++
 
-Also functional paradigm has at least 3 core operations, all present in F# of course :
+Also functional paradigm has at least 3 core operations, all present in F# of course 
 - Transform |
 - Filter |
 - Reduce |
 
 +++
 In short, it's about writing LinQ all day long :
-- Transform : Select() in Linq or map in F# 
+- Transform : Select() in Linq or map in F# | 
 - Filter: Where() in Linq or filter in F#|
 - Reduce: Aggregate() in Linq or fold / reduce in F# |
 
 +++
 Functional paradigms implies a strong focus on data, function working on data and composability. <br /> Coupled with the type systems, we have a real boost on productivity and more important reliability. 
+---
 
 ### Reason 5
 #### Pattern matching
@@ -276,8 +277,8 @@ let logInToSystem (subject:Credentials) =
     | Classic c -> // We do something else with it 
 ```
 @[1-4](We take back our exemple from before ...)
-@[5-8](We go a little further on the log in function ...)
-@[6-8](That's pattern matching !)
+@[6-9](We go a little further on the log in function ...)
+@[7-9](That's pattern matching !)
 
 +++
 ```fsharp
@@ -298,9 +299,15 @@ let someFunc (a: string list) =
   | [_; _] -> printfn "List has only 2 elements"
   | _ -> printfn "List has more than 2 elements"
 ```
+@[1-5](A function with pattern matching on list)
+@[2-3](We do that if list is empty)
+@[2,4](Or we do that if list has only two elements)
+@[2,5](For any other case that's what we do !)
+
 +++
 Pattern matching in F# allows for much more, check out [Microsoft doc on this](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/pattern-matching)
 
+---
 ### Reason 6
 #### Interactivity is key !
 
@@ -308,7 +315,7 @@ Pattern matching in F# allows for much more, check out [Microsoft doc on this](h
 F# has a REPL call FSI for F# Interactive
 
 +++
-FSI has full Visual Studio Support since VS2017
+FSI has full Visual Studio Support for a while now, VS2017 included.
 
 +++
 REPL is useful ask Python and Javascript developers or just watch the CScript initiative from MS ...
@@ -317,8 +324,9 @@ REPL is useful ask Python and Javascript developers or just watch the CScript in
 Many useful usage :
 - You can create scripts |
 - You can write code to test some cases and load project / production dll to see what's happen |
-- You can run some code during developmenet, load it and try it directly
+- You can run some code during developmenet, load it and try it directly |
 
+---
 ### What we did not talk about 
 
 There are much more that we could have talked about
@@ -333,9 +341,11 @@ There are much more that we could have talked about
 - F# to Javascript with [Fable.io](http://fable.io) |
 - ... |
 
+---
 ### Some useful links
 
 - Learning F# for [Fun and Profit](https://fsharpforfunandprofit.com)
+- [Interactive programming with F#](https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/fsharp-interactive/)
 - [Weekly news on F#](https://sergeytihon.com/category/f-weekly/)
 - [F# foundation](https://fsharp.org)
 
