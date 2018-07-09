@@ -1,4 +1,4 @@
-### C# developers: 6 Reasons to have a serious look at `F#`
+### C# developers, 6 Reasons to have a serious look at F# 
 
 ---
 
