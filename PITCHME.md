@@ -151,7 +151,7 @@ let logInToSystem(Credentials cred) =
 How many times have you declared some fields / properties as 'readonly' ?
 
 +++
-Far less complicated to write concurrent code in application in F#
+Far less complicated to write concurrent code in F#
 
 +++
 Declaration is initialisation.
@@ -224,7 +224,7 @@ let mul n1 n2 =
   n1 * n2
   
 let mul2 = mul 2
-let add10 = add10
+let add10 = add 10
 
 let mulBy2ThenAdd10 = mul2 >> add10
 
@@ -314,7 +314,7 @@ F# has a REPL call FSI for F# Interactive
 FSI has full Visual Studio Support for a while now, VS2017 included.
 
 +++
-REPL is useful ask Python and Javascript developers or just watch the CScript initiative from MS ...
+REPL is useful: ask Python and Javascript developers or just watch the CScript initiative from MS ...
 
 +++
 Some useful usage :
@@ -341,7 +341,7 @@ Error handling with : `Option<T>` and `Result<TSuccess,TError>`
 Type Providers
 
 +++ 
-Asynchronuous programming
+Asynchronous programming
 
 +++ 
 Computation expression
@@ -350,7 +350,7 @@ Computation expression
 [Domain Driven Design with F#](https://www.amazon.fr/Domain-Modeling-Made-Functional-Domain-Driven/dp/1680502549/ref=sr_1_fkmr0_1?ie=UTF8&qid=1531145812&sr=8-1-fkmr0&keywords=DDD+in+F%23)
 
 +++ 
-Property based testing with [FSCheck](https://fscheck.github.io/FsCheck/) or [Hedgehob](https://github.com/hedgehogqa/fsharp-hedgehog)
+Property based testing with [FSCheck](https://fscheck.github.io/FsCheck/) or [Hedgehog](https://github.com/hedgehogqa/fsharp-hedgehog)
 
 +++ 
 F# to Javascript with [Fable.io](http://fable.io)
