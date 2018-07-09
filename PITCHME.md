@@ -1,4 +1,8 @@
-### 6 Reasons to have a serious look at F# for a C# developer.
+### C# developers: 6 Reasons to have a serious look at F#
+
+---
+
+> "Point of view is worth 80 IQ points" <br> Alan Kay
 
 ---
 
@@ -244,7 +248,7 @@ mulBy2ThenAdd10 5
 @[12-13](We call that function)
 +++
 
-Also functional paradigm has at least 3 core operations, all present in F# of course 
+Also functional paradigm has 3 core operations (amongst others), all present in F# of course 
 - Transform |
 - Filter |
 - Reduce |
