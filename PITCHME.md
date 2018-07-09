@@ -145,7 +145,7 @@ let logInToSystem(Credentials cred) =
 @[3-5](This is a sum type.)
 @[3-5](You create a valid Credentials value with the Token or the Classic constructor)
 @[7-11](No need for several implementation of User or any variation, just give it a Credential field)
-@[13-17](F# gives you way to deal with both representation of Credentials)
+@[13-17](F# gives you ways to deal with both representation of Credentials)
 
 ---
 
@@ -164,7 +164,10 @@ This does not compile in F#, you must give it a value
 Far less complicated to write concurrent code in application in F#
 
 +++
-You never question if the value is present when needed except if the type tells you, it can happen <br /> 'null' is not the default for representing the abscence of value ...
+You never question if the value is present when needed except if the type tells you it can happen
+
++++
+'null' is not the default for representing the abscence of value anymore ...
 
 +++
 #### F# supports 'null' for compatibility reasons with .NET, however ...
@@ -173,7 +176,6 @@ You never question if the value is present when needed except if the type tells 
 
 +++
 
-If you want to know more about immutability in general and why so many systems / practices uses it (Redux, Kafka, Event Sourcing ...) <br /> Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
+If you want to have an idea on why immutability is so popular with many systems / practices (Redux, Kafka, Event Sourcing ...) <br /> Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
 
 ---
-
