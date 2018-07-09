@@ -187,7 +187,7 @@ let mutable myNameIs = "@essicf37"
 myNameIs <- "Slim Shady"
 ```
 +++
-If you want to have an idea on why immutability is so popular with many systems / practices (Redux, Kafka, Event Sourcing ...) <br /> Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
+Why immutability ? Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
 
 ---
 
@@ -201,7 +201,7 @@ As stated before, F# supports several paradigm but is functional first.
 let sayHello name =
   printfn "Hello %s" name
 ```
-@[1-2](This is a function in F# and it's strongly type !)
+This is a function in F# and it's strongly type !
 
 +++
 ```fsharp
@@ -322,7 +322,7 @@ FSI has full Visual Studio Support for a while now, VS2017 included.
 REPL is useful ask Python and Javascript developers or just watch the CScript initiative from MS ...
 
 +++
-Many useful usage :
+Some useful usage :
 - You can create scripts |
 - You can write code to test some cases and load production DLLs to see what's happening exactly |
 - You can run some code during developmenet, load it and try it directly |
@@ -331,10 +331,7 @@ Many useful usage :
 ### What we did not talk about 
 
 +++ 
-Support on multiple IDE (VS, Atom, VsCode, Emacs, Vim) 
-
-+++ 
-F# libraries / Frameworks
+Support on multiple IDE <br /> (VS, Atom, VsCode, Emacs, Vim) 
 
 +++ 
 F# on .NET core
@@ -343,7 +340,7 @@ F# on .NET core
 Active patterns 
 
 +++ 
-Error handling with : Option<T> and Result<TSuccess,TError> 
+Error handling with : Option\<T\> and Result\<TSuccess,TError\> 
 
 +++ 
 Type Providers
@@ -364,7 +361,7 @@ Property based testing with [FSCheck](https://fscheck.github.io/FsCheck/) or [He
 F# to Javascript with [Fable.io](http://fable.io)
 
 +++ 
-Much more
+Much more features, libraries and frameworks
 
 ---
 ### Some useful links
