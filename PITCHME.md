@@ -256,7 +256,8 @@ In short, it's about writing LinQ all day long :
 - Reduce: Aggregate() in Linq or fold / reduce in F# |
 
 +++
-Functional paradigms implies a strong focus on data, function working on data and composability. <br /> Coupled with the type systems, we have a real boost on productivity and more important reliability. 
+Functional paradigms implies a strong focus on data, function working on data and composability. 
+
 ---
 
 ### Reason 5
@@ -323,23 +324,24 @@ REPL is useful ask Python and Javascript developers or just watch the CScript in
 +++
 Many useful usage :
 - You can create scripts |
-- You can write code to test some cases and load project / production dll to see what's happen |
+- You can write code to test some cases and load production DLLs to see what's happening exactly |
 - You can run some code during developmenet, load it and try it directly |
 
 ---
 ### What we did not talk about 
 
-There are much more that we could have talked about
-- Support on multiple IDE (VS, Atom, VsCode, Emacs, Vim) |
-- Active patterns |
-- Error handling with : Option<T> and Result<TSuccess,TError> | 
-- Type Providers |
-- Asynchronuous programming |
-- Computation expression |
-- [Domain Driven Design with F#](https://www.amazon.fr/Domain-Modeling-Made-Functional-Domain-Driven/dp/1680502549/ref=sr_1_fkmr0_1?ie=UTF8&qid=1531145812&sr=8-1-fkmr0&keywords=DDD+in+F%23) |
-- Property based testing with [FSCheck](https://fscheck.github.io/FsCheck/) or [Hedgehob](https://github.com/hedgehogqa/fsharp-hedgehog) |
-- F# to Javascript with [Fable.io](http://fable.io) |
-- ... |
++++ Support on multiple IDE (VS, Atom, VsCode, Emacs, Vim) 
++++ F# libraries / Frameworks
++++ F# on .NET core
++++ Active patterns 
++++ Error handling with : Option<T> and Result<TSuccess,TError> 
++++ Type Providers
++++ Asynchronuous programming
++++ Computation expression
++++ [Domain Driven Design with F#](https://www.amazon.fr/Domain-Modeling-Made-Functional-Domain-Driven/dp/1680502549/ref=sr_1_fkmr0_1?ie=UTF8&qid=1531145812&sr=8-1-fkmr0&keywords=DDD+in+F%23)
++++ Property based testing with [FSCheck](https://fscheck.github.io/FsCheck/) or [Hedgehob](https://github.com/hedgehogqa/fsharp-hedgehog)
++++ F# to Javascript with [Fable.io](http://fable.io)
++++ Much more
 
 ---
 ### Some useful links
