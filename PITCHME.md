@@ -34,7 +34,7 @@ The reverse is true for all basic F# that you can write. <br /> Special cases in
 ---
 
 ### Reason 2
-### F# has better typing 
+#### F# has better typing 
 
 Sum types & Product types 
 
@@ -153,8 +153,7 @@ let logInToSystem(Credentials cred) =
 ### Reason 3
 #### F# is immutable by default. 
 
-Immutability in general have deep repercusion on the design / implementation of systems. 
-<br /> How many times have you declared some fields / properties as 'readonly' ?
+How many times have you declared some fields / properties as 'readonly' ?
 
 +++
 Far less complicated to write concurrent code in application in F#
@@ -176,14 +175,14 @@ You never question if the value is present when needed except if the type tells 
 +++
 #### F# supports 'null' for compatibility reasons with .NET, however ...
 - no implicit 'null' assignation is done
-- pure F# types are value type, not reference (a little bit more complicated ^__^)
+- pure F# types are not nullable 
 
 +++
 
 Of course if mutability is what you want ...
 
 ```fsharp
-let mutable myNameIs = "@essiccf37"
+let mutable myNameIs = "@essicf37"
 
 myNameIs <- "Slim Shady"
 ```
@@ -195,7 +194,7 @@ If you want to have an idea on why immutability is so popular with many systems 
 ### Reason 4
 #### Functional paradigm first
 
-As stated before, F# supports several paradigm but is Functional first. 
+As stated before, F# supports several paradigm but is functional first. 
 
 +++
 ```fsharp
@@ -216,12 +215,13 @@ let add2 = add 2
 add2 4
 //results is 6
 ```
-@[1-3](A simple addition function)
+@[1-3](A simple addition functions)
+@[3](No need for return, F# function always returns the last value computed)
 @[5-6](We use the automatic currying of F# to create a function which will add '2')
 @[8-9](We call the add2 function)
 
 +++
-```
+```fsharp
 let add n1 n2 =
   n1 + n2
 
@@ -244,16 +244,102 @@ mulBy2ThenAdd10 5
 @[12-13](We call that function)
 +++
 
-In short, functional paradigm has at least 3 core operations, all present in F# of course :
+Also functional paradigm has at least 3 core operations, all present in F# of course :
 - Transform |
 - Filter |
 - Reduce |
 
 +++
 In short, it's about writing LinQ all day long :
-- Select is map |
-- Where isfilter |
-- Aggregate is fold or reduce |
+- Transform : Select() in Linq or map in F# 
+- Filter: Where() in Linq or filter in F#|
+- Reduce: Aggregate() in Linq or fold / reduce in F# |
 
 +++
 Functional paradigms implies a strong focus on data, function working on data and composability. <br /> Coupled with the type systems, we have a real boost on productivity and more important reliability. 
+
+### Reason 5
+#### Pattern matching
+
+Just write it as it is ...
+
++++
+```fsharp
+type LoginAndPassword { Login: string; Password : string }
+type Credentials =
+| Token of string
+| Classic of LoginAndPassword
+
+let logInToSystem (subject:Credentials) =
+  match subject with
+    | Token t -> // We do something with it
+    | Classic c -> // We do something else with it 
+```
+@[1-4](We take back our exemple from before ...)
+@[5-8](We go a little further on the log in function ...)
+@[6-8](That's pattern matching !)
+
++++
+```fsharp
+let someFunc a =
+  let aBigTuple = ("@essiccf37","c# developer","f# deveoper")
+  let handle, skill1, skill2 = aBigTuple
+  //...
+  ()
+```
+@[1-5](Some function)
+@[3](That's also pattern matching !)
+
++++
+```fsharp
+let someFunc (a: string list) =
+  match a with
+  | [] -> printfn "List is empty !" 
+  | [_; _] -> printfn "List has only 2 elements"
+  | _ -> printfn "List has more than 2 elements"
+```
++++
+Pattern matching in F# allows for much more, check out [Microsoft doc on this](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/pattern-matching)
+
+### Reason 6
+#### Interactivity is key !
+
++++
+F# has a REPL call FSI for F# Interactive
+
++++
+FSI has full Visual Studio Support since VS2017
+
++++
+REPL is useful ask Python and Javascript developers or just watch the CScript initiative from MS ...
+
++++
+Many useful usage :
+- You can create scripts |
+- You can write code to test some cases and load project / production dll to see what's happen |
+- You can run some code during developmenet, load it and try it directly
+
+### What we did not talk about 
+
+There are much more that we could have talked about
+- Support on multiple IDE (VS, Atom, VsCode, Emacs, Vim) |
+- Active patterns |
+- Error handling with : Option<T> and Result<TSuccess,TError> | 
+- Type Providers |
+- Asynchronuous programming |
+- Computation expression |
+- [Domain Driven Design with F#](https://www.amazon.fr/Domain-Modeling-Made-Functional-Domain-Driven/dp/1680502549/ref=sr_1_fkmr0_1?ie=UTF8&qid=1531145812&sr=8-1-fkmr0&keywords=DDD+in+F%23) |
+- Property based testing with [FSCheck](https://fscheck.github.io/FsCheck/) or [Hedgehob](https://github.com/hedgehogqa/fsharp-hedgehog) |
+- F# to Javascript with [Fable.io](http://fable.io) |
+- ... |
+
+### Some useful links
+
+- Learning F# for [Fun and Profit](https://fsharpforfunandprofit.com)
+- [Weekly news on F#](https://sergeytihon.com/category/f-weekly/)
+- [F# foundation](https://fsharp.org)
+
+---
+### Thank you !
+
+Questions ?
