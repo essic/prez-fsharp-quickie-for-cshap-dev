@@ -8,17 +8,10 @@
 
 ### What's F# ?
 
-- Strongly, statically typed, open sourced and cross platform language from Microsoft with deep inference |
 - 1.0 appeared on 2005 ( older than GO ...) |
+- Strongly, statically typed, open sourced and cross platform language from Microsoft with deep inference |
 - Multi-paradigm language : functional, imperative and object-oriented |
-
----
-
-### What's F# ?
-
-- It compiles to executable or you can script with it |
 - Heavily influenced by ML, OCaml, Haskell, C# & others |
-- Fully supported by .NET & Mono. Compiles to Javascript |
 
 ---
 
@@ -26,14 +19,10 @@
 #### No compatibility risk !
 
 +++
-Anything written in C# can be used in F# !
+Anything written in C# can be used in F# 
 
 +++
-In fact it's true for everything running on the .NET Runtime... 
-
-+++
-
-The reverse is true for all basic F# that you can write. <br /> Special cases includes features depending on the F# compilers.
+The reverse is true for all F# not depending on the compiler
 
 ---
 
@@ -52,17 +41,16 @@ public class Something {
 ```
 @[2](All correct values of int are correct here)
 @[3](All correct values of string are also correct here)
-@[2-3](All combination of int and string are correct for the class 'Something'.<br /> In short 'Something' is a product type of int and string )
+@[2-3](All combination of int and string are correct for the class 'Something'.<br /> In short 'Something' is a product type of int and string)
 
 +++
-Product type in F#
+#### Product type 
 
 ```fsharp
 type Something = Ctr of int * string
 
 type Something2 = { SomeNumber : Int ; SomeSentence : string }
 ```
-
 @[1](Something is a product type, of int and string with 'Ctr' being the constructor)
 @[3](Something2 is a record - another kind of product type - )
 
@@ -77,7 +65,10 @@ Of course you can also make a class in F# !
 +++
 #### Sum type
 
-It's when a type can have multiple representation. <br /> There's no Sum Type in C# however, there's polymorphism ...
+A type with multiple representations 
+
++++
+There's no Sum Type in C# however, there's polymorphism ...
 
 +++
 
@@ -123,7 +114,7 @@ public class UserWithToken : HasCredentials {
 @[26-28,30-32](We have two kind of Users, you get the idea ...)
 
 +++
-Lot's of code for something we do almost everyday ... <br /> Let's check what we could do with F# ...
+Lot's of code for something we do almost everyday ... <br /> Let's check what we could do with F# 
 
 +++
 
@@ -191,7 +182,7 @@ let mutable myNameIs = "@essicf37"
 myNameIs <- "Slim Shady"
 ```
 +++
-Why immutability ? Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
+Why the 'buzz' on immutability ? Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516) for some answers.
 
 ---
 
@@ -244,7 +235,7 @@ mulBy2ThenAdd10 5
 @[1-2,4-5](We define some function)
 @[7-8](We use some currying)
 @[10](We use 'function composition' to define a function which multiply input by 2 then add 10 to the result)
-@[10](This is called function composition, '>>' is offered by F#)
+@[10](This is called function composition, `>>` is offered by F#)
 @[12-13](We call that function)
 +++
 
