@@ -178,4 +178,14 @@ You never question if the value is present when needed except if the type tells 
 
 If you want to have an idea on why immutability is so popular with many systems / practices (Redux, Kafka, Event Sourcing ...) <br /> Please watch [@KevlinHenney presentation on NCraft](http://videos.ncrafts.io/video/276832516)
 
++++
+
+Of course if mutability is what you want ...
+
+```fsharp
+let mutable myNameIs = "@essiccf37"
+
+myNameIs <- "Slim Shady"
+```
+
 ---
