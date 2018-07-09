@@ -18,7 +18,8 @@
 
 ---
 
-### Reson 1 -> No compatibility risk !
+### Reson 1
+#### No compatibility risk !
 
 +++
 Anything written in C# can be used in F# !
@@ -32,7 +33,8 @@ The reverse is true for all basic F# that you can write. <br /> Special cases in
 
 ---
 
-### Reason 2 -> F# has better typing 
+### Reason 2
+### F# has better typing 
 
 Sum types & Product types 
 
@@ -148,7 +150,8 @@ let logInToSystem(Credentials cred) =
 
 ---
 
-### Reason 3 -> F# is immutable by default. 
+### Reason 3
+#### F# is immutable by default. 
 
 Immutability in general have deep repercusion on the design / implementation of systems. 
 <br /> How many times have you declared some fields / properties as 'readonly' ?
@@ -189,7 +192,8 @@ If you want to have an idea on why immutability is so popular with many systems 
 
 ---
 
-### Reason 4 -> Functional paradigm first
+### Reason 4
+#### Functional paradigm first
 
 As stated before, F# supports several paradigm but is Functional first. 
 
