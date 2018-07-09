@@ -27,6 +27,9 @@ No compatibility risk !
 Anything written in C# can be used in F# !
 
 +++
+In fact it's true for everything running on the .NET Runtime... 
+
++++
 
 The reverse is true for all basic F# that you can write. <br /> Special cases includes features depending on the F# compilers.
 
