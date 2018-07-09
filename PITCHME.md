@@ -48,9 +48,10 @@ public class Something {
 ```
 @[2](All correct values of int are correct here)
 @[3](All correct values of string are also correct here)
-@[2-3](All combination of int and string are correct for the class 'Something'.<br /> In short 'Something' is a product type of int * string )
+@[2-3](All combination of int and string are correct for the class 'Something'.<br /> In short 'Something' is a product type of int and string )
 
 +++
+Product type in F#
 
 ```fsharp
 type Something = Ctr of int * string
