@@ -148,7 +148,7 @@ let logInToSystem(Credentials cred) =
 @[13-17](F# gives you ways to deal with both representation of Credentials)
 
 +++
-Sum types is nothing new. It has been part of OCaml by example for a long while. <br /> However many modern languages fully support this : TypeScript, Rust, Scala, Haskell ...
+Sum types is supported by many languages already : OCaml, TypeScript, Rust, Scala, Haskell ...
 
 ---
 
