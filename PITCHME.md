@@ -1,4 +1,4 @@
-### C`#` developers, 6 Reasons to have a serious look at F`#` 
+### C`#` developers here's 6 Reasons to have a serious look at F`#` 
 
 ---
 
@@ -8,10 +8,10 @@
 
 ### What's F# ?
 
-- 1.0 appeared on 2005 ( older than GO ...) |
 - Strongly, statically typed, open sourced and cross platform language from Microsoft with deep inference |
 - Multi-paradigm language : functional, imperative and object-oriented |
 - Heavily influenced by ML, OCaml, Haskell, C# & others |
+- 1.0 appeared on 2005 ( older than GO, TypeScript, Rust ...) |
 
 ---
 
@@ -22,7 +22,10 @@
 Anything written in C# can be used in F# 
 
 +++
-The reverse is true for all F# not depending on the compiler
+The reverse is true for all F# features not depending on the compiler
+
++++
+In short, same constraints as VB.NET
 
 ---
 
@@ -39,9 +42,10 @@ public class Something {
   public string SomeSentence {get; set;}
 }
 ```
-@[2](All correct values of int are correct here)
-@[3](All correct values of string are also correct here)
-@[2-3](All combination of int and string are correct for the class 'Something'.<br /> In short 'Something' is a product type of int and string)
+@[2](Any value of 'int' type can be assigned here)
+@[3](All value of 'string' type can be assigned here)
+@[2-3](The 'Something' class, can have any combination of 'int' AND 'string' value)
+@[2-3](In short 'Something' is a product type of int and string)
 
 +++
 #### Product type 
@@ -51,7 +55,7 @@ type Something = Ctr of int * string
 
 type Something2 = { SomeNumber : Int ; SomeSentence : string }
 ```
-@[1](Something is a product type, of int and string with 'Ctr' being the constructor)
+@[1](Something is a product type, of int AND string with 'Ctr' being the constructor)
 @[3](Something2 is a record - another kind of product type - )
 
 +++
@@ -77,12 +81,12 @@ public abstract class Credentials {
 //...
 }
 
-public class LoginAndPasswordCred : Credentials {
+public class ClassicCredentials : Credentials {
   public string User { get; set; }
   public string Password { get; set; }
 }
 
-public class TokenCred : Credentials {
+public class TokenCredentials : Credentials {
   public string Token {get;set;}
 }
 
@@ -106,15 +110,15 @@ public class UserWithToken : HasCredentials {
   //...
 }
 ```
-@[1-3](We want a Credentials class)
+@[1-3](We want a base Credentials class)
 @[5-8](We define a type of Credentials)
 @[10-12](We define another type of Credentials)
-@[14-16](We define an interface to force the existence of Credentials later on ...)
+@[14-16](We define an interface to use later on ...)
 @[18-24](We have some class which can deal with anything that implements 'HasCredentials')
 @[26-28,30-32](We have two kind of Users, you get the idea ...)
 
 +++
-Lot's of code for something we do almost everyday ... <br /> Let's check what we could do with F# 
+We got a lot of code for something we do almost everyday ... <br /> Let's see what we could do with F# 
 
 +++
 
@@ -123,7 +127,7 @@ type UserAndPassword = { Login : string ; Password : string }
 
 type Credentials =
 | Token of string 
-| Classic of LoginAndPassword 
+| Classic of UserAndPassword
 
 type User =
   { 
@@ -139,7 +143,7 @@ let logInToSystem(Credentials cred) =
 
 @[1](Nothing new here)
 @[3-5](This is a sum type.)
-@[3-5](You create a valid Credentials value with the Token or the Classic constructor)
+@[3-5](You create a valid value of type 'Credentials' with 'Token' OR 'Classic' constructor)
 @[7-11](No need for several implementation of User or any variation, just give it a Credential field)
 @[13-17](F# gives you ways to deal with both representation of Credentials)
 
@@ -154,23 +158,22 @@ How many times have you declared some fields / properties as 'readonly' ?
 Far less complicated to write concurrent code in F#
 
 +++
-Declaration is initialisation.
+Declaration is initialisation <br /> This does not compile in F#, you must give it a value
 
 ```fsharp
 let someVariable : Int
 ```
-This does not compile in F#, you must give it a value
 
 +++
-You never question if the value is present when needed except if the type tells you it can happen
+In F#, you never question if the value is present but what the value is.
 
 +++
-'null' is not the default for representing the abscence of value anymore ...
+Also 'null' is not the default for representing the abscence of value anymore <br /> You need a value by default ? Make it explicit !
 
 +++
 #### F# supports 'null' for compatibility reasons with .NET, however ...
 - no implicit 'null' assignation is done
-- pure F# types are not nullable 
+- pure F# types are not nullable (still usable in C#) 
 
 +++
 
@@ -189,7 +192,7 @@ Why the 'buzz' on immutability ? Please watch [@KevlinHenney presentation on NCr
 ### Reason 4
 #### Functional paradigm first
 
-As stated before, F# supports several paradigm but is functional first. 
+As stated before, F# supports several paradigm but is functional first 
 
 +++
 ```fsharp
@@ -205,15 +208,15 @@ let add number1 number2 =
   number1 + number2
 
 //int -> int
-let add2 = add 2
+let addTwo = add 2
 
-add2 4
+addTwo 4
 //results is 6
 ```
-@[1-3](A simple addition functions)
+@[1-3](A simple addition function)
 @[3](No need for return, F# function always returns the last value computed)
 @[5-6](We use the automatic currying of F# to create a function which will add '2')
-@[8-9](We call the add2 function)
+@[8-9](We call the addTwo function)
 
 +++
 ```fsharp
@@ -223,20 +226,20 @@ let add n1 n2 =
 let mul n1 n2 =
   n1 * n2
   
-let mul2 = mul 2
-let add10 = add 10
+let mulTwo = mul 2
+let addTen = add 10
 
-let mulBy2ThenAdd10 = mul2 >> add10
+let mulByTwoThenAddTen = mulTwo >> addTen
 
-mulBy2ThenAdd10 5 
+mulByTwoThenAddTen 5 
 //result is : 20
 
 ```
-@[1-2,4-5](We define some function)
-@[7-8](We use some currying)
+@[1-2,4-5](We define some functions)
+@[7-8](We use some currying, again)
 @[10](We use 'function composition' to define a function which multiply input by 2 then add 10 to the result)
 @[10](This is called function composition, `>>` is offered by F#)
-@[12-13](We call that function)
+@[12-13](We call function mulByTwoThenAddTen)
 +++
 
 Also functional paradigm has 3 core operations (amongst others), all present in F# of course 
@@ -251,7 +254,7 @@ In short, it's about writing LinQ all day long :
 - Reduce: Aggregate() in Linq or fold / reduce in F# |
 
 +++
-Functional paradigms implies a strong focus on data, function working on data and composability. 
+Functional paradigms implies a strong focus on data and composable functions 
 
 ---
 
@@ -275,6 +278,8 @@ let logInToSystem (subject:Credentials) =
 @[1-4](We take back our exemple from before ...)
 @[6-9](We go a little further on the log in function ...)
 @[7-9](That's pattern matching !)
+@[7-8,2-3](We deal with the Token representation of the sum type)
+@[7-9,2-4](We deal with the Classic representation of the sum type)
 
 +++
 ```fsharp
@@ -285,6 +290,7 @@ let someFunc a =
   ()
 ```
 @[1-5](Some function)
+@[2](A simple tuple, that's also a product type by the way : string * string * string)
 @[3](That's also pattern matching !)
 
 +++
@@ -298,7 +304,7 @@ let someFunc (a: string list) =
 @[1-5](A function with pattern matching on list)
 @[2-3](We do that if list is empty)
 @[2,4](Or we do that if list has only two elements)
-@[2,5](For any other case that's what we do !)
+@[2,5](Or for any other case that's what we do !)
 
 +++
 Pattern matching in F# allows for much more, check out [Microsoft doc on this](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/pattern-matching)
@@ -319,7 +325,7 @@ REPL is useful: ask Python and Javascript developers or just watch the CScript i
 +++
 Some useful usage :
 - You can create scripts |
-- You can write code to test some cases and load production DLLs to see what's happening exactly |
+- You can write code to test some cases and load production DLLs to see exactly what's happening  |
 - You can run some code during developmenet, load it and try it directly |
 
 ---
