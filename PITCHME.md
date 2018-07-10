@@ -147,6 +147,9 @@ let logInToSystem(Credentials cred) =
 @[7-11](No need for several implementation of User or any variation, just give it a Credential field)
 @[13-17](F# gives you ways to deal with both representation of Credentials)
 
++++
+Sum types is nothing new. It has been part of OCaml by example for a long while. <br /> However many modern languages fully support this : TypeScript, Rust, Scala, Haskell ...
+
 ---
 
 ### Reason 3
@@ -165,7 +168,7 @@ let someVariable : Int
 ```
 
 +++
-In F#, you never question if the value is present but what the value is.
+In F#, you never question if the value is present but only what the value is.
 
 +++
 Also 'null' is not the default for representing the abscence of value anymore <br /> You need a value by default ? Make it explicit !
@@ -254,7 +257,7 @@ In short, it's about writing LinQ all day long :
 - Reduce: Aggregate() in Linq or fold / reduce in F# |
 
 +++
-Functional paradigms implies a strong focus on data and composable functions 
+Functional paradigm implies a strong focus on data and composable functions 
 
 ---
 
@@ -276,10 +279,10 @@ let logInToSystem (subject:Credentials) =
     | Classic c -> // We do something else with it 
 ```
 @[1-4](We take back our exemple from before ...)
-@[6-9](We go a little further on the log in function ...)
+@[6-9](We go a little further on the 'log in' function ...)
 @[7-9](That's pattern matching !)
-@[7-8,2-3](We deal with the Token representation of the sum type)
-@[7-9,2-4](We deal with the Classic representation of the sum type)
+@[7,8,2,3](We deal with the Token representation of the sum type)
+@[7,9,2,4](We deal with the Classic representation of the sum type)
 
 +++
 ```fsharp
@@ -290,7 +293,7 @@ let someFunc a =
   ()
 ```
 @[1-5](Some function)
-@[2](A simple tuple, that's also a product type by the way : string * string * string)
+@[2](A simple tuple, also a product type btw : `string * string * string`)
 @[3](That's also pattern matching !)
 
 +++
