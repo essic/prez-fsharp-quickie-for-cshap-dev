@@ -377,7 +377,7 @@ Much more features, libraries and frameworks
 
 ---
 
-C# is absolutely not dead and continue to evolve (C# 7 pattern matching ...). <br /> However Having another point of view in itself will make you better at what you do everyday.
+C# is absolutely not dead and continue to evolve <br /> However having another point of view in itself can only make you better at what you do everyday.
 
 ---
 ### Thank you !
