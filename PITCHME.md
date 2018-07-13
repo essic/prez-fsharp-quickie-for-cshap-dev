@@ -376,6 +376,10 @@ Much more features, libraries and frameworks
 - [F# foundation](https://fsharp.org)
 
 ---
+
+C# is absolutely not dead and continue to evolve (C# 7 pattern matching ...). <br /> However Having another point of view in itself will make you better at what you do everyday.
+
+---
 ### Thank you !
 
 Questions ?
