@@ -1,4 +1,4 @@
-### C`#` developers here's 6 Reasons to have a serious look at F`#` 
+### C`#` developers here's 6 reasons to have a serious look at F`#` 
 
 ---
 
@@ -8,7 +8,7 @@
 
 ### What's F# ?
 
-- Strongly, statically typed, open sourced and cross platform language from Microsoft with deep inference |
+- Strongly, statically typed, open sourced and cross platform language with deep inference from Microsoft |
 - Multi-paradigm language : functional, imperative and object-oriented |
 - Heavily influenced by ML, OCaml, Haskell, C# & others |
 - 1.0 appeared on 2005 ( older than GO, TypeScript, Rust ...) |
@@ -174,9 +174,9 @@ In F#, you never question if the value is present but only what the value is.
 Also 'null' is not the default for representing the abscence of value anymore <br /> You need a value by default ? Make it explicit !
 
 +++
-#### F# supports 'null' for compatibility reasons with .NET, however ...
-- no implicit 'null' assignation is done
-- pure F# types are not nullable (still usable in C#) 
+#### F# supports 'null' for compatibility <br /> reasons with .NET however ...
+- no implicit 'null' assignation is done |
+- pure F# types are not nullable (still usable in C#) | 
 
 +++
 
@@ -202,7 +202,7 @@ As stated before, F# supports several paradigm but is functional first
 let sayHello name =
   printfn "Hello %s" name
 ```
-This is a function in F# and it's strongly type !
+This is a function in F# and it's strongly typed !
 
 +++
 ```fsharp
@@ -377,7 +377,7 @@ Much more features, libraries and frameworks
 
 ---
 
-C# is absolutely not dead and continue to evolve <br /> However having another point of view in itself can only make you better at what you do everyday
+C# is absolutely not dead and continues to evolve <br /> However having another point of view in itself can only make you better at what you do. 
 
 ---
 ### Thank you !
