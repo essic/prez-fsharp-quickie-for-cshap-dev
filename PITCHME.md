@@ -32,7 +32,7 @@ In short, same constraints as VB.NET
 ### Reason 2
 #### F# has better typing 
 
-Sum types & Product types 
+##### Sum types & Product types 
 
 +++
 #### Product type
@@ -69,7 +69,7 @@ Of course you can also make a class in F# !
 +++
 #### Sum type
 
-A type with multiple representations 
+##### A type with multiple representations 
 
 +++
 There's no Sum Type in C# however, there's polymorphism ...
@@ -155,7 +155,7 @@ Sum types is supported by many languages already : OCaml, TypeScript, Rust, Scal
 ### Reason 3
 #### F# is immutable by default. 
 
-How many times have you declared some fields / properties as 'readonly' ?
+##### How many times have you declared some fields / properties as 'readonly' ?
 
 +++
 Far less complicated to write concurrent code in F#
@@ -174,7 +174,7 @@ In F#, you never question if the value is present but only what the value is.
 Also 'null' is not the default for representing the abscence of value anymore <br /> You need a value by default ? Make it explicit !
 
 +++
-#### F# supports 'null' for compatibility <br /> reasons with .NET however ...
+F# supports 'null' for compatibility <br /> reasons with .NET however ...
 - no implicit 'null' assignation is done |
 - pure F# types are not nullable (still usable in C#) | 
 
@@ -195,7 +195,7 @@ Why the 'buzz' on immutability ? Please watch [@KevlinHenney presentation on NCr
 ### Reason 4
 #### Functional paradigm first
 
-As stated before, F# supports several paradigm but is functional first 
+#### `F#` supports several paradigm but is functional first 
 
 +++
 ```fsharp
@@ -264,7 +264,7 @@ Functional paradigm implies a strong focus on data and composable functions
 ### Reason 5
 #### Pattern matching
 
-Just write it as it is ...
+##### Just write it as it is ...
 
 +++
 ```fsharp
