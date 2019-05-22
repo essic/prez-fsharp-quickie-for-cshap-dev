@@ -158,7 +158,7 @@ let logInToSystem(Credentials cred) =
 @[13-17](F# gives you ways to deal with both representation of Credentials)
 
 +++
-Sum types is supported by many languages already : OCaml, TypeScript, Rust, Scala, Haskell ...
+Sum type is not new : SML, OCaml, TypeScript, Rust, Scala, Haskell ...
 
 ---
 
@@ -171,26 +171,30 @@ Sum types is supported by many languages already : OCaml, TypeScript, Rust, Scal
 Far less complicated to write concurrent code in F#
 
 +++
-Declaration is initialisation <br /> This does not compile in F#, you must give it a value
+Declaration is initialisation
 
 ```fsharp
 let someVariable : Int
 ```
+@[1](This does not compile.)
 
 +++
 In F#, you never question if the value is present but only what the value is.
 
 +++
-Also 'null' is not the default for representing the abscence of value anymore <br /> You need a value by default ? Make it explicit !
+No more implicit value by default
 
 +++
-F# supports 'null' for compatibility <br /> reasons with .NET however ...
+So 'null' is not the default value reference type. 0 is not de default value for int ... 
+
++++
+F# supports 'null' however ...
 - no implicit 'null' assignation is done |
 - pure F# types are not nullable (still usable in C#) | 
 
 +++
 
-Of course if mutability is what you want ...
+Of course if mutability is needed ...
 
 ```fsharp
 let mutable myNameIs = "@essicf37"
@@ -267,7 +271,7 @@ In short, it's about writing LinQ all day long :
 - Reduce: Aggregate() in Linq or fold / reduce in F# |
 
 +++
-Functional paradigm implies a strong focus on data and composable functions 
+Functional paradigm implies a strong focus on data and composability of functions 
 
 ---
 
