@@ -71,9 +71,6 @@ Of course you can also make a class in F# ! Which are also PRODUCT types !
 +++
 #### Sum type
 
-##### A type with multiple representations 
-
-+++
 ```fsharp
 type Something =
     | Str of string
