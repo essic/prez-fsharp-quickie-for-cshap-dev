@@ -171,7 +171,6 @@ Sum type is not new : SML, OCaml, TypeScript, Rust, Scala, Haskell ...
 Far less complicated to write concurrent code in F#
 
 +++
-Declaration is initialisation
 
 ```fsharp
 let someVariable : Int
