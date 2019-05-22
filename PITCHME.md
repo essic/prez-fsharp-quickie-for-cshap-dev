@@ -19,20 +19,22 @@
 #### No compatibility risk !
 
 +++
-Anything written in C# can be used in F# 
+C# + F# = LOVE
 
 +++
-The reverse is true for all F# features not depending on the compiler
+
+! F# compilers features !
 
 +++
-In short, same constraints as VB.NET
+In short, same constraints as VB.NET ...
 
 ---
 
 ### Reason 2
 #### F# has better typing 
 
-##### Sum types & Product types 
+##### string * int
+##### string + int
 
 +++
 #### Product type
@@ -43,20 +45,20 @@ public class Something {
 }
 ```
 @[2](Any value of 'int' type can be assigned here)
-@[3](All value of 'string' type can be assigned here)
-@[2-3](The 'Something' class, can have any combination of 'int' AND 'string' value)
-@[2-3](In short 'Something' is a product type of int and string)
+@[3](Any value of 'string' type can be assigned here)
+@[2-3](A valid instance of 'Something', can be any combination of 'int' and 'string')
+@[2-3](=> 'Something' is a PRODUCT type of 'int' AND 'string' => int * string)
 
 +++
-#### Product type 
+#### Product type (again !) 
 
 ```fsharp
 type Something = Ctr of int * string
 
 type Something2 = { SomeNumber : Int ; SomeSentence : string }
 ```
-@[1](Something is a product type, of int AND string with 'Ctr' being the constructor)
-@[3](Something2 is a record - another kind of product type - )
+@[1](Something is still product type, of 'int' AND string with 'Ctr' being the constructor for a value of type 'Something')
+@[3](Something2 is a record YET - another kind of product type - )
 
 +++
 ```fsharp
@@ -64,7 +66,7 @@ type Something() =
   member val SomeNumber = 0 with get, set
   member val SomeSentence = "" with get, set
 ```
-Of course you can also make a class in F# !
+Of course you can also make a class in F# ! Which are also PRODUCT types !
 
 +++
 #### Sum type
@@ -72,7 +74,18 @@ Of course you can also make a class in F# !
 ##### A type with multiple representations 
 
 +++
-There's no Sum Type in C# however, there's polymorphism ...
+```fsharp
+type Something =
+    | Str of string
+    | Nb of int
+```
+@[2](A value of type 'Something' can be a 'string')
+@[3](A value of type 'Something' can also be a 'int')
+@[1-3]('Something' is a SUM type of 'string' OR 'int' => int + string)
+
+
++++
+NO Sum Type in C# but, there's polymorphism ...
 
 +++
 
@@ -97,7 +110,7 @@ public interface HasCredentials {
 public class LoginSystem {
   public bool LogIn(HasCredentials subject) {
     bool hasSignedIn;
-    //Imagine some code here ...
+    //Imagine some code here that ...
     return hasSignedIn;
   }
 }
@@ -155,7 +168,7 @@ Sum types is supported by many languages already : OCaml, TypeScript, Rust, Scal
 ### Reason 3
 #### F# is immutable by default. 
 
-##### How many times have you declared some fields / properties as 'readonly' ?
+##### I SHALL NOT WRITE READONLY, ANYMORE
 
 +++
 Far less complicated to write concurrent code in F#
